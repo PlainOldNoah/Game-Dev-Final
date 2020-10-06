@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/hazmat walk.png-2cdffb2a331fe3418875b89b4a6d78f1.stex"
+path="res://.import/Hazmat Walking.png-4d78e80f98e082dd7d84ac54777c3c79.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/hazmat walk.png"
-dest_files=[ "res://.import/hazmat walk.png-2cdffb2a331fe3418875b89b4a6d78f1.stex" ]
+source_file="res://assets/sprites/Hazmat Walking.png"
+dest_files=[ "res://.import/Hazmat Walking.png-4d78e80f98e082dd7d84ac54777c3c79.stex" ]
 
 [params]
 
