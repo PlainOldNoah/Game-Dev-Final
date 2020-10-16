@@ -27,8 +27,12 @@ func get_input():
 	# Runs Walk and Idle animation and sound depending on if sprite is moving
 	if !moving:
 		$AnimatedSprite.play("Idle")
+		if $Audio.is_playing():
+			$Audio.stop()
 	if moving:
 		$AnimatedSprite.play("Walk")
+		if not $Audio.is_playing():
+			$Audio.play()
 	velocity = velocity.normalized() * SPEED
 	
 func _physics_process(delta):

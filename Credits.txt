@@ -3,3 +3,5 @@ Project by Noah MacMinn & Rebecca Rexroth
 Hazmat Sprite:
 https://www.spriters-resource.com/neo_geo_ngcd/ms4/sheet/11364/?source=genre
 
+Walking Sound Effect:
+https://bigsoundbank.com/detail-0514-footsteps-shoe-on-concrete.html
