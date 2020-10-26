@@ -1,0 +1,19 @@
+Noah MacMinn and Rebecca Rexroth
+
+
+Assignment 5:
+We plan to create a simple top-down puzzle game set in a run down laboratory.
+* There will be a few character sprites in the game, the player character will be a hazmat suit and there will be a few monsters set throughout the game. The monsters will be able to attack the player. The player will be able to pick up objects and open doors.
+* The player sprite will have both a walking animation controlled with arrow keys or WASD and an animation when it collapses from taking too much damage. The monster sprites will have walking and attacking animations
+* Tables, debris on the floor, walls, and doors will block character and NPC movement
+* Player can pick up keycards to open doors
+* Player can use gas masks/repair kits to extend the durability of their suit
+* KineticBody2D: Monsters
+* StaticBody2D: Used for large piles of debris, tables, and walls
+* RigidBody2D: Key cards and repair items
+* Area2D: used in certain sections of the lab that damage player over time
+* Background items can include bloodstains, minor debris, fog/dust, spots of running water/blood on th
+* Particle effects: Dust when player and NPCs walk, dust cloud when doors open
+* Sound effects: sliding door opening, footsteps, sound when hit, 
+* Goal of the game: complete puzzles to collect items that need to be taken to the research area of the lab in order to clear monsters. Game over can occur if the player takes too much damage a certain number of times
+* Intro screen: dark image with eerie music playing, switches to more ambient sound when game plays. Has a settings menu to adjust volume with sliders, a credits screen, and a start button.
