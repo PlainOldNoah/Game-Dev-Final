@@ -8,3 +8,6 @@ https://bigsoundbank.com/detail-0514-footsteps-shoe-on-concrete.html
 
 Floor Tiles:
 https://opengameart.org/content/dirty-tiles
+
+Monster Sprite:
+https://opengameart.org/content/lpc-zombie
