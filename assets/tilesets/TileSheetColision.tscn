@@ -17,4 +17,5 @@ collision_layer = 2
 collision_mask = 31
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tile/StaticBody2D"]
+visible = false
 shape = SubResource( 1 )
