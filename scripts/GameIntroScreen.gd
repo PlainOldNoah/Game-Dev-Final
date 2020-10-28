@@ -1,0 +1,17 @@
+extends PanelContainer
+
+
+func _ready():
+	pass
+	
+func _on_GameStart_pressed():
+	print("Starting Game...")
+	get_tree().change_scene("res://scenes/TestingMap.tscn")
+
+func _on_Settings_pressed():
+	print("Opening Settings")
+	get_tree().change_scene("res://scenes/Settings.tscn")
+
+func _on_Credits_pressed():
+	print("Opening Credits")
+	get_tree().change_scene("res://scenes/Credits.tscn")
