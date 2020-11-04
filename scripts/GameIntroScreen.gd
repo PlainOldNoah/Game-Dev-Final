@@ -7,7 +7,7 @@ func _ready():
 	
 func _on_GameStart_pressed():
 	print("Starting Game...")
-	get_tree().change_scene("res://scenes/TestingMap.tscn")
+	get_tree().change_scene("res://scenes/GameRunner.tscn")
 
 func _on_Settings_pressed():
 	print("Opening Settings")

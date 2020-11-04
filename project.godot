@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Steering="*res://scripts/Steering.gd"
+Globals="*res://scripts/Globals.gd"
 
 [input]
 
