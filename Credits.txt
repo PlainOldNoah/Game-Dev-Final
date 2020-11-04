@@ -3,11 +3,15 @@ Project by Noah MacMinn & Rebecca Rexroth
 Hazmat Sprite:
 https://www.spriters-resource.com/neo_geo_ngcd/ms4/sheet/11364/?source=genre
 
-Walking Sound Effect:
+Walking Sound Effects:
 https://bigsoundbank.com/detail-0514-footsteps-shoe-on-concrete.html
+https://freesound.org/people/magnuswaker/sounds/540075/
 
 Floor Tiles:
 https://opengameart.org/content/dirty-tiles
 
 Monster Sprite:
 https://opengameart.org/content/lpc-zombie
+
+Intro Screen music:
+Decay - Kevin MacLeod https://filmmusic.io/song/3628-decay
