@@ -14,6 +14,10 @@ func _physics_process(delta: float) -> void:
 	)
 	
 	vel = move_and_slide(vel)
+	if vel != Vector2.ZERO:
+		$Meat.play()
+	else:
+		$Meat.stop()
 	#set up to take input from user using IJKL, will be modified for pathing later
 	#moves left when j key pressed, starts animation
 	#if Input.is_key_pressed(KEY_J):
