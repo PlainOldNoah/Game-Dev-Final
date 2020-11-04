@@ -1,8 +1,7 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://assets/sprites/Monster Walking.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Monster.gd" type="Script" id=2]
-[ext_resource path="res://assets/audio/540075__magnuswaker__meat-slap-3.wav" type="AudioStream" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -69,7 +68,7 @@ script = ExtResource( 2 )
 light_mask = 0
 frames = SubResource( 10 )
 animation = "MonsterWalk"
-frame = 5
+frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -77,6 +76,3 @@ position = Vector2( 1.4745, 1.41582 )
 shape = SubResource( 11 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
-
-[node name="Meat" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 3 )

@@ -2,6 +2,7 @@ extends PanelContainer
 
 
 func _ready():
+	$Decay.play()
 	pass
 	
 func _on_GameStart_pressed():
