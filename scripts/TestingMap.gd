@@ -14,4 +14,5 @@ func _ready():
 	add_child(player)
 	
 	var monster = monster_scene.instance()
+	monster.position = Vector2(0, 100)
 	add_child(monster)
