@@ -1,21 +1,27 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scripts/GameIntroScreen.gd" type="Script" id=1]
 [ext_resource path="res://assets/audio/decay-by-kevin-macleod-from-filmmusic-io.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/bdec28c4aaa8e97d0f4d5a05698bf8d5.jpg" type="Texture" id=3]
 
 [node name="Control" type="PanelContainer"]
 anchor_left = 0.5
-anchor_top = 0.5
+anchor_top = 0.669
 anchor_right = 0.5
-anchor_bottom = 0.5
+anchor_bottom = 0.669
 margin_left = -72.0
-margin_top = -29.0
+margin_top = -30.4
 margin_right = 72.0
-margin_bottom = 29.0
+margin_bottom = 27.6
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 66.657, -69.34 )
+scale = Vector2( 0.988334, 0.707353 )
+texture = ExtResource( 3 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 7.0
@@ -24,7 +30,6 @@ margin_right = 137.0
 margin_bottom = 51.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
