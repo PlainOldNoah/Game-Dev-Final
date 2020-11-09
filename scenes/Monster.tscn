@@ -68,7 +68,7 @@ script = ExtResource( 2 )
 light_mask = 0
 frames = SubResource( 10 )
 animation = "MonsterWalk"
-frame = 1
+frame = 6
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
