@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/GasStation.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Road1.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/NoahAlien.tscn" type="PackedScene" id=3]
+
+[node name="Root" type="Spatial"]
+
+[node name="NoahsStuff" type="Spatial" parent="."]
+
+[node name="GasStation" parent="NoahsStuff" instance=ExtResource( 1 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7, 0, -6.5 )
+
+[node name="Road" parent="NoahsStuff" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1, 0, -4 )
+
+[node name="Road2" parent="NoahsStuff" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -4 )
+
+[node name="Alien" parent="NoahsStuff" instance=ExtResource( 3 )]
+transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.65434, 1.04719, -5.84221 )
