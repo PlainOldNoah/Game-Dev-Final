@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scenes/GasStation.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Road1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/NoahAlien.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/RRAlien.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/RichHouse.tscn" type="PackedScene" id=5]
 
 [node name="Root" type="Spatial"]
 
@@ -19,3 +21,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -4 )
 
 [node name="Alien" parent="NoahsStuff" instance=ExtResource( 3 )]
 transform = Transform( 0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 3.65434, 1.04719, -5.84221 )
+
+[node name="RR" type="Spatial" parent="."]
+
+[node name="RichHouse" parent="RR" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 0, 8 )
+
+[node name="Road3" parent="RR" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -4 )
+
+[node name="Road4" parent="RR" instance=ExtResource( 2 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -17, 0, -4 )
+
+[node name="Alien2" parent="RR" instance=ExtResource( 4 )]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -14.7491, 3.19415, -0.230156 )
