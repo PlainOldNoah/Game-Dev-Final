@@ -2,7 +2,8 @@ extends KinematicBody2D
 
 var velocity = Vector2(0,0)
 var SPEED = 200
-	
+var Mouse_Position
+
 func get_input():
 	velocity = Vector2()
 	var moving = false
@@ -38,3 +39,7 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	move_and_slide(velocity)
+
+func _process(delta):
+	#Mouse_Position = get_local_mouse_position()
+	$Position2D.look_at(get_global_mouse_position())
