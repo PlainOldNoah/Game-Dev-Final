@@ -10,7 +10,7 @@ func _ready():
 	add_child(map)
 	
 	var player = load(Globals.asset_path["player"]).instance()
-	player.position = Vector2(300, -100)
+	player.position = Vector2(500, 500)
 	player.scale.x = SCALE
 	player.scale.y = SCALE
 	add_child(player)
