@@ -8,22 +8,31 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Player",
+"language": "GDScript",
+"path": "res://scripts/Player.gd"
+} ]
 _global_script_class_icons={
-
+"Player": ""
 }
 
 [application]
 
 config/name="Csc 361 Final"
 run/main_scene="res://scenes/GameIntroScreen.tscn"
-config/icon="res://icon.png"
 
 [autoload]
 
 Steering="*res://scripts/Steering.gd"
 Globals="*res://scripts/Globals.gd"
 MusicController="*res://scenes/MusicController.tscn"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [input]
 
