@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var speed = 2
+var speed = Globals.variables["player_speed"] * Globals.variables["monster_speed"]
 onready var target = get_parent().get_node("HazmatEntity")
 var vel = Vector2.ZERO
 
