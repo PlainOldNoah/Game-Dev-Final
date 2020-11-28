@@ -27,6 +27,7 @@ run/main_scene="res://scenes/GameIntroScreen.tscn"
 
 Steering="*res://scripts/Steering.gd"
 Globals="*res://scripts/Globals.gd"
+MusicController="*res://scenes/MusicController.tscn"
 
 [display]
 
