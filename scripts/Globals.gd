@@ -4,7 +4,6 @@ var gameplay = {
 	"maxNeedles": 8,
 	"currentNeedles" : 0,
 	"maxHealth" : 3,
-	"currentHealth" : 3,
 }
 
 var map_details = {

@@ -12,7 +12,7 @@ func _ready() -> void:
 	_initialize()
 
 func _initialize() -> void:
-	randomize()
+	rng.randomize()
 	var level = _spawn_level()
 	_spawn_player(level)
 	_spawn_monster()
@@ -26,11 +26,9 @@ func _spawn_level() -> Node2D:
 	Globals.map_details["spawnNumCount"] = Globals.map_details["spawnNumArray"].size()
 	return map
 
-
 func _spawn_player(map : Node2D) -> Node2D:
 	player.position = coord_normalize(Vector2(7,32))
-	player.scale.x = 1.75
-	player.scale.y = 1.75
+	player.scale = Vector2(1.75, 1.75)
 	add_child(player)
 	return player
 
