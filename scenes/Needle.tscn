@@ -1,14 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://assets/sprites/pixel_icons_by_oceansdream_0.png" type="Texture" id=1]
-[ext_resource path="res://scripts/Needle.gd" type="Script" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 14.7167, 4.50781 )
+[sub_resource type="CircleShape2D" id=1]
+radius = 9.35863
 
-[node name="Needle" type="Area2D"]
+[node name="Needle" type="StaticBody2D" groups=[
+"Needle",
+]]
 scale = Vector2( 2, 2 )
-script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -16,8 +16,6 @@ region_enabled = true
 region_rect = Rect2( 72, 96, 24, 24 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 1.5, 1.5 )
-rotation = 0.785398
+position = Vector2( 0.65625, 1.09375 )
+scale = Vector2( 1.5, 1.5 )
 shape = SubResource( 1 )
-[connection signal="area_entered" from="." to="." method="_on_Needle_area_entered"]
-[connection signal="body_entered" from="." to="." method="_on_Needle_body_entered"]

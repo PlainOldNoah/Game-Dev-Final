@@ -56,8 +56,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 20.275, 37.686 )
+[sub_resource type="CapsuleShape2D" id=11]
 
 [node name="MonsterEntity" type="KinematicBody2D" groups=[
 "monster",
@@ -70,10 +69,11 @@ script = ExtResource( 2 )
 light_mask = 0
 frames = SubResource( 10 )
 animation = "MonsterWalk"
+frame = 4
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -1.775, 0 )
+scale = Vector2( -2.57336, 2.00595 )
 shape = SubResource( 11 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]

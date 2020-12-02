@@ -1,12 +1,25 @@
 extends KinematicBody2D
 class_name Player
 
+onready var needleLabel = $HUD/PanelContainer2/HBoxContainer2/NeedleFraction
+
 var velocity = Vector2(0,0)
 var SPEED = Globals.variables["player_speed"]
 var dead = false
+var hasAllNeedes = false
+var currentHealth = 0
+var currentNeedles = 0
+var maxNeedles = Globals.gameplay["maxNeedles"]
 
 func _ready():
+	_initialize()
+
+func _initialize():
 	dead = false
+	hasAllNeedes = false
+	currentHealth = Globals.gameplay["maxHealth"]
+	needleLabel.text = "%s / %s" % [currentNeedles, maxNeedles]
+	
 
 func get_input():
 	velocity = Vector2()
@@ -52,8 +65,17 @@ func _process(delta):
 
 func _on_Area2D_body_entered(body):
 	if body.is_in_group("monster"):
-		Globals.gameplay["currentHealth"] -= clamp(1, 0, Globals.gameplay["maxHealth"])
-		print_debug(Globals.gameplay["currentHealth"])
-		if Globals.gameplay["currentHealth"] == 0:
+		currentHealth -= clamp(1, 0, Globals.gameplay["maxHealth"])
+		$HUD/PanelContainer/HBoxContainer/ProgressBar.value = currentHealth
+		if currentHealth == 0:
 			dead = true
-
+			$SelfLight.visible = false
+			$Position2D/FlashLight.visible = false
+			
+	if body.is_in_group("Needle"):
+		currentNeedles += 1
+		needleLabel.text = "%s / %s" % [currentNeedles, maxNeedles]
+		body.queue_free()
+		if currentNeedles == maxNeedles:
+			hasAllNeedes = true
+			needleLabel.add_color_override("font_color", Color(0,1,0))
