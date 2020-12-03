@@ -45,9 +45,12 @@ func get_input():
 		velocity.y += 1
 		moving = true
 		
-	if Input.is_key_pressed(KEY_L):
+	if Input.is_key_pressed(KEY_L): #DEBUG
 		print_debug("RELOADING SCENE")
 		get_tree().reload_current_scene()
+	
+	if Input.is_key_pressed(KEY_ESCAPE):
+		get_tree().change_scene("res://scenes/GameIntroScreen.tscn")
 	
 	# Runs Walk and Idle animation and sound depending on if sprite is moving
 	if not dead:
@@ -71,7 +74,6 @@ func _process(delta):
 	$Position2D.look_at(get_global_mouse_position())
 
 func _on_Area2D_body_entered(body):
-	print(body)
 	if body.is_in_group("monster") and hittable == true:
 		currentHealth -= clamp(1, 0, Globals.gameplay["maxHealth"])
 		$HUD/PanelContainer/VBoxContainer/HBoxContainer/ProgressBar.value = currentHealth
