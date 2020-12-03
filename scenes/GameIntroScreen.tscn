@@ -66,22 +66,31 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 
 [node name="Settings" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
-margin_right = 165.0
+margin_right = 109.0
 margin_bottom = 72.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Settings"
 
 [node name="Credits" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
-margin_left = 169.0
-margin_right = 335.0
+margin_left = 113.0
+margin_right = 222.0
 margin_bottom = 72.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Options"
+
+[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer/HBoxContainer"]
+margin_left = 226.0
+margin_right = 335.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Quit"
 
 [node name="Decay" type="AudioStreamPlayer" parent="PanelContainer"]
 stream = ExtResource( 2 )
 [connection signal="pressed" from="PanelContainer/VBoxContainer/GameStart" to="PanelContainer" method="_on_GameStart_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Settings" to="PanelContainer" method="_on_Settings_pressed"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Credits" to="PanelContainer" method="_on_Credits_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/HBoxContainer/Quit" to="PanelContainer" method="_on_Quit_pressed"]
