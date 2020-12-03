@@ -1,9 +1,10 @@
 extends Node2D
 
-onready var map = load(Globals.asset_path["map"]).instance()
-onready var player = load(Globals.asset_path["player"]).instance()
-onready var monster = load(Globals.asset_path["monster"]).instance()
+onready var map_scene = preload("res://scenes/MainMap.tscn")
+onready var player_scene = preload("res://scenes/Player.tscn")
+onready var monster_scene = preload("res://scenes/Monster.tscn")
 onready var needle_scene = preload("res://scenes/Needle.tscn")
+onready var med_station_scene = preload("res://scenes/MedStation.tscn")
 
 var rng = RandomNumberGenerator.new()
 
@@ -19,6 +20,7 @@ func _initialize() -> void:
 	_spawn_objectives()
 
 func _spawn_level() -> Node2D:
+	var map = map_scene.instance()
 	map.scale.x = Globals.variables["map_scale"]
 	map.scale.y = Globals.variables["map_scale"]
 	add_child(map)
@@ -27,23 +29,30 @@ func _spawn_level() -> Node2D:
 	return map
 
 func _spawn_player(map : Node2D) -> Node2D:
+	var player = player_scene.instance()
 	player.position = coord_normalize(Vector2(7,32))
 	player.scale = Vector2(1.75, 1.75)
 	add_child(player)
 	return player
 
 func _spawn_monster() -> Node2D:
-	#monster.position = Vector2(200, -200)
+	var monster = monster_scene.instance()
 	var randPos = rng.randi_range(0, Globals.map_details["spawnNumCount"])
 	monster.position = coord_normalize(Globals.map_details["spawnNumArray"][randPos])
 	add_child(monster)
 	return monster
 
 func _spawn_objectives() -> void:
+	var medStation = med_station_scene.instance()
+	var randPos = rng.randi_range(0, Globals.map_details["spawnNumCount"])
+	#medStation.position = coord_normalize(Globals.map_details["spawnNumArray"][randPos])
+	medStation.position = coord_normalize(Vector2(10, 32))
+	add_child(medStation)
+	
 	for i in range(Globals.gameplay["maxNeedles"]):
 		var needle = needle_scene.instance()
 		needle.rotation_degrees = (rng.randi_range(0, 360))
-		var randPos = rng.randi_range(0, Globals.map_details["spawnNumCount"])
+		randPos = rng.randi_range(0, Globals.map_details["spawnNumCount"])
 		needle.position = coord_normalize(Globals.map_details["spawnNumArray"][randPos])
 		add_child(needle)
 

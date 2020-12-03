@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.627451, 0.627451, 0.627451, 1 )
@@ -14,6 +14,8 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 border_color = Color( 0.211765, 0, 0, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
 
 [node name="HUD" type="CanvasLayer"]
 
@@ -93,3 +95,84 @@ margin_bottom = 14.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "%s/%s"
+
+[node name="Alert" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -237.0
+margin_top = -67.0
+margin_right = 237.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "ALERT
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AlertDuration" type="Timer" parent="Alert"]
+wait_time = 5.0
+
+[node name="GameOverScreen" type="PanelContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -263.0
+margin_top = -134.0
+margin_right = 263.0
+margin_bottom = 135.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverScreen"]
+margin_right = 526.0
+margin_bottom = 269.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="GameOverScreen/VBoxContainer"]
+margin_right = 526.0
+margin_bottom = 189.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "GAME OVER"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameOverScreen/VBoxContainer"]
+margin_top = 193.0
+margin_right = 526.0
+margin_bottom = 269.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+custom_constants/separation = 60
+
+[node name="Quit" type="Button" parent="GameOverScreen/VBoxContainer/HBoxContainer"]
+margin_right = 233.0
+margin_bottom = 76.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/hseparation = 545
+text = "Quit"
+
+[node name="Retry" type="Button" parent="GameOverScreen/VBoxContainer/HBoxContainer"]
+margin_left = 293.0
+margin_right = 526.0
+margin_bottom = 76.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/hseparation = 545
+text = "Retry"

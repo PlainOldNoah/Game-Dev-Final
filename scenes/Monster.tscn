@@ -57,6 +57,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=11]
+radius = 8.40341
+height = 20.2081
 
 [node name="MonsterEntity" type="KinematicBody2D" groups=[
 "monster",

@@ -7,11 +7,14 @@ Walking Sound Effects:
 https://bigsoundbank.com/detail-0514-footsteps-shoe-on-concrete.html
 https://freesound.org/people/magnuswaker/sounds/540075/
 
-Floor Tiles:
-https://opengameart.org/content/dirty-tiles
-
 Monster Sprite:
 https://opengameart.org/content/lpc-zombie
 
 Intro Screen music:
 Decay - Kevin MacLeod https://filmmusic.io/song/3628-decay
+
+Tilemap Sprite:
+Noah MacMinn
+
+Medstation Sprite:
+Noah MacMinn

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://assets/sprites/Hazmat Idle.png" type="Texture" id=1]
 [ext_resource path="res://assets/sprites/Hazmat Walking.png" type="Texture" id=2]
@@ -140,11 +140,15 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=30]
-radius = 12.1828
+radius = 13.2623
+
+[sub_resource type="CapsuleShape2D" id=31]
+radius = 16.9012
 
 [node name="HazmatEntity" type="KinematicBody2D" groups=[
 "player",
 ]]
+z_index = 1
 collision_mask = 2
 script = ExtResource( 4 )
 
@@ -166,17 +170,17 @@ drag_margin_top = 0.1
 drag_margin_right = 0.1
 drag_margin_bottom = 0.1
 
-[node name="HitBox" type="CollisionPolygon2D" parent="."]
-scale = Vector2( -1, 1 )
-polygon = PoolVector2Array( -5.13004, 21.8164, 9.83042, 21.6095, 12.7067, 16.4532, 11.0581, 8.70119, 9.80621, 3.36854, 11.3387, -7.08343, 8.95835, -18.4033, 4.74942, -19.4338, -8.87741, -19.3089, -11.6335, -17.3009, -11.5915, -6.97915, -10.4678, 3.32172, -11.451, 9.97045, -12.3422, 16.9532, -10.5844, 21.82 )
+[node name="HitBox" type="CollisionShape2D" parent="."]
+position = Vector2( 1.5, 1 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+shape = SubResource( 30 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="EnemyDetector" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 1.54339, 1.19262 )
-rotation = 3.14159
-scale = Vector2( 1, -1 )
-shape = SubResource( 30 )
+position = Vector2( 1.5, 1 )
+shape = SubResource( 31 )
 
 [node name="SelfLight" type="Light2D" parent="."]
 scale = Vector2( 0.5, 0.5 )
@@ -191,5 +195,13 @@ position = Vector2( 216.635, 0 )
 scale = Vector2( 1.25, 0.8 )
 texture = ExtResource( 7 )
 
+[node name="DamageCooldown" type="Timer" parent="."]
+wait_time = 0.5
+
 [node name="HUD" parent="." instance=ExtResource( 8 )]
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="timeout" from="DamageCooldown" to="." method="_on_DamageCooldown_timeout"]
+[connection signal="pressed" from="HUD/GameOverScreen/VBoxContainer/HBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="HUD/GameOverScreen/VBoxContainer/HBoxContainer/Retry" to="." method="_on_Retry_pressed"]
+
+[editable path="HUD"]
