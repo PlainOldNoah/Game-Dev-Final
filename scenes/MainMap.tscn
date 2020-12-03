@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/tilesets/TileSheetMain.tres" type="TileSet" id=1]
 [ext_resource path="res://assets/tilesets/CollisionTileset.tres" type="TileSet" id=2]
 [ext_resource path="res://assets/ViewportDark.png" type="Texture" id=3]
+[ext_resource path="res://scenes/LabMonitor.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Table.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/LabMonitor2.tscn" type="PackedScene" id=6]
 
 [node name="MainMap" type="Node2D"]
 
@@ -34,3 +37,47 @@ position = Vector2( 790.704, 1015.79 )
 scale = Vector2( 5.76, 7.04 )
 texture = ExtResource( 3 )
 mode = 2
+
+[node name="Monitor1" parent="." instance=ExtResource( 4 )]
+position = Vector2( 279.148, 1872.28 )
+
+[node name="Monitor2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 86.8587, 1598.01 )
+
+[node name="Monitor3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 119.035, 154.85 )
+
+[node name="Monitor4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1236.58, 944.06 )
+
+[node name="Monitor5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 683.587, 198.814 )
+
+[node name="Monitor6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 683.587, 260 )
+
+[node name="Monitor7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1482.82, 810.955 )
+
+[node name="Monitor8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1484.9, 1580.37 )
+
+[node name="Monitor9" parent="." instance=ExtResource( 6 )]
+position = Vector2( 1483.12, 1877.97 )
+
+[node name="Table" parent="." instance=ExtResource( 5 )]
+position = Vector2( 384, 156.5 )
+scale = Vector2( 2, 0.5 )
+
+[node name="Table2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1275.5, 431.5 )
+
+[node name="Table3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1366, 206 )
+
+[node name="Table4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 374.5, 1038.5 )
+
+[node name="Table5" parent="." instance=ExtResource( 5 )]
+position = Vector2( 866, 1429 )
+scale = Vector2( 2, 0.5 )
