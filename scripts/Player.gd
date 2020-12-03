@@ -14,6 +14,8 @@ var maxNeedles = Globals.gameplay["maxNeedles"]
 
 func _ready():
 	_initialize()
+	$HUD._play_message(0)
+	
 
 func _initialize():
 	dead = false
@@ -21,7 +23,6 @@ func _initialize():
 	hittable = true
 	currentHealth = Globals.gameplay["maxHealth"]
 	needleLabel.text = "%s / %s" % [currentNeedles, maxNeedles]
-	
 
 func get_input():
 	velocity = Vector2()
@@ -43,6 +44,10 @@ func get_input():
 	if Input.is_key_pressed(KEY_S):
 		velocity.y += 1
 		moving = true
+		
+	if Input.is_key_pressed(KEY_L):
+		print_debug("RELOADING SCENE")
+		get_tree().reload_current_scene()
 	
 	# Runs Walk and Idle animation and sound depending on if sprite is moving
 	if not dead:
@@ -73,8 +78,6 @@ func _on_Area2D_body_entered(body):
 		$DamageCooldown.start()
 		if currentHealth == 0:
 			dead = true
-			$SelfLight.visible = false
-			$Position2D/FlashLight.visible = false
 			$HUD/GameOverScreen.visible = true
 	if body.is_in_group("Needle"):
 		currentNeedles += 1
@@ -83,15 +86,11 @@ func _on_Area2D_body_entered(body):
 		if currentNeedles == maxNeedles:
 			hasAllNeedes = true
 			needleLabel.add_color_override("font_color", Color(0,1,0))
+			$HUD._play_message(1)
+	if body.is_in_group("MedStation") and hasAllNeedes == true:
+		$HUD._play_message(2)
+		$HUD/WinnerScene.visible = true
+		dead = true
 
 func _on_DamageCooldown_timeout():
 	hittable = true
-
-func _on_Quit_pressed():
-	get_tree().change_scene("res://scenes/GameIntroScreen.tscn")
-
-
-func _on_Retry_pressed():
-	get_tree().reload_current_scene()
-
-

@@ -25,7 +25,7 @@ func _spawn_level() -> Node2D:
 	map.scale.y = Globals.variables["map_scale"]
 	add_child(map)
 	Globals.map_details["spawnNumArray"] = map.get_child(2).get_used_cells()
-	Globals.map_details["spawnNumCount"] = Globals.map_details["spawnNumArray"].size()
+	Globals.map_details["spawnNumCount"] = Globals.map_details["spawnNumArray"].size() - 1
 	return map
 
 func _spawn_player(map : Node2D) -> Node2D:
@@ -39,14 +39,14 @@ func _spawn_monster() -> Node2D:
 	var monster = monster_scene.instance()
 	var randPos = rng.randi_range(0, Globals.map_details["spawnNumCount"])
 	monster.position = coord_normalize(Globals.map_details["spawnNumArray"][randPos])
+	monster.scale = Vector2(1.5, 1.5)
 	add_child(monster)
 	return monster
 
 func _spawn_objectives() -> void:
 	var medStation = med_station_scene.instance()
 	var randPos = rng.randi_range(0, Globals.map_details["spawnNumCount"])
-	#medStation.position = coord_normalize(Globals.map_details["spawnNumArray"][randPos])
-	medStation.position = coord_normalize(Vector2(10, 32))
+	medStation.position = coord_normalize(Globals.map_details["spawnNumArray"][randPos])
 	add_child(medStation)
 	
 	for i in range(Globals.gameplay["maxNeedles"]):

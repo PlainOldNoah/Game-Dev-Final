@@ -5,17 +5,16 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 14.4638, 16.6227 )
 
-[node name="MedStation" type="Node2D" groups=[
+[node name="MedStation" type="StaticBody2D" groups=[
 "MedStation",
 ]]
-scale = Vector2( 3, 3 )
+collision_mask = 0
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 1.752 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, -5 )
+position = Vector2( 0, -15 )
+scale = Vector2( 3, 3 )
 texture = ExtResource( 1 )
