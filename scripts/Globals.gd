@@ -14,7 +14,7 @@ var map_details = {
 
 var variables = {
 	"player_speed" : 500,
-	"monster_speed" : 0.5, #monster speed equals this x player speed
+	"monster_speed" : 2, #monster speed equals this x player speed
 	"map_scale" : 3,
 }
 
