@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/HUD.gd" type="Script" id=1]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.627451, 0.627451, 0.627451, 1 )
@@ -16,6 +18,7 @@ border_width_bottom = 2
 border_color = Color( 0.211765, 0, 0, 1 )
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource( 1 )
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 margin_left = 10.0
@@ -93,3 +96,140 @@ margin_bottom = 14.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "%s/%s"
+
+[node name="Alert" type="Label" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 13.4226
+margin_top = -50.7094
+margin_right = 391.423
+margin_bottom = -11.7094
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Hello"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverScreen" type="PanelContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -263.0
+margin_top = -134.0
+margin_right = 263.0
+margin_bottom = 135.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverScreen"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 519.0
+margin_bottom = 262.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="GameOverScreen/VBoxContainer"]
+margin_right = 512.0
+margin_bottom = 179.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "GAME OVER"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="GameOverScreen/VBoxContainer"]
+margin_top = 183.0
+margin_right = 512.0
+margin_bottom = 255.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+custom_constants/separation = 60
+
+[node name="Quit" type="Button" parent="GameOverScreen/VBoxContainer/HBoxContainer"]
+margin_right = 226.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/hseparation = 545
+text = "Quit"
+
+[node name="Retry" type="Button" parent="GameOverScreen/VBoxContainer/HBoxContainer"]
+margin_left = 286.0
+margin_right = 512.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/hseparation = 545
+text = "Retry"
+
+[node name="WinnerScene" type="PanelContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -263.0
+margin_top = -134.0
+margin_right = 263.0
+margin_bottom = 135.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WinnerScene"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 519.0
+margin_bottom = 262.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="WinnerScene/VBoxContainer"]
+margin_right = 512.0
+margin_bottom = 179.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "WINNER"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="WinnerScene/VBoxContainer"]
+margin_top = 183.0
+margin_right = 512.0
+margin_bottom = 255.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.4
+custom_constants/separation = 60
+
+[node name="Quit" type="Button" parent="WinnerScene/VBoxContainer/HBoxContainer"]
+margin_right = 226.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/hseparation = 545
+text = "Quit"
+
+[node name="Retry" type="Button" parent="WinnerScene/VBoxContainer/HBoxContainer"]
+margin_left = 286.0
+margin_right = 512.0
+margin_bottom = 72.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/hseparation = 545
+text = "Retry"
+[connection signal="pressed" from="GameOverScreen/VBoxContainer/HBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="GameOverScreen/VBoxContainer/HBoxContainer/Retry" to="." method="_on_Retry_pressed"]
+[connection signal="pressed" from="WinnerScene/VBoxContainer/HBoxContainer/Quit" to="." method="_on_Quit_pressed"]
+[connection signal="pressed" from="WinnerScene/VBoxContainer/HBoxContainer/Retry" to="." method="_on_Retry_pressed"]
