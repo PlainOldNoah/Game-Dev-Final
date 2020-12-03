@@ -39,7 +39,6 @@ func _spawn_player(map : Node2D) -> Node2D:
 func _limit_camera(player, level : Node2D) -> void:
 	var usedRect: Rect2 = level.get_child(0).get_used_rect()
 	var mapSize = coord_normalize(usedRect.size)
-	print(mapSize)
 	player.get_child(0).set_limit(MARGIN_LEFT, 0)
 	player.get_child(0).set_limit(MARGIN_TOP, 0)
 	player.get_child(0).set_limit(MARGIN_RIGHT, mapSize.x - 48)
