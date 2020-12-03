@@ -15,7 +15,8 @@ func _ready() -> void:
 func _initialize() -> void:
 	rng.randomize()
 	var level = _spawn_level()
-	_spawn_player(level)
+	var player = _spawn_player(level)
+	_limit_camera(player, level)
 	_spawn_monster()
 	_spawn_objectives()
 
@@ -34,6 +35,15 @@ func _spawn_player(map : Node2D) -> Node2D:
 	player.scale = Vector2(1.75, 1.75)
 	add_child(player)
 	return player
+
+func _limit_camera(player, level : Node2D) -> void:
+	var usedRect: Rect2 = level.get_child(0).get_used_rect()
+	var mapSize = coord_normalize(usedRect.size)
+	print(mapSize)
+	player.get_child(0).set_limit(MARGIN_LEFT, 0)
+	player.get_child(0).set_limit(MARGIN_TOP, 0)
+	player.get_child(0).set_limit(MARGIN_RIGHT, mapSize.x - 48)
+	player.get_child(0).set_limit(MARGIN_BOTTOM, mapSize.y - 48)
 
 func _spawn_monster() -> Node2D:
 	var monster = monster_scene.instance()

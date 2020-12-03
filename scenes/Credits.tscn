@@ -1,31 +1,94 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://scripts/CreditsAndSettings.gd" type="Script" id=1]
-[ext_resource path="res://assets/bdec28c4aaa8e97d0f4d5a05698bf8d5.jpg" type="Texture" id=2]
 
 [node name="PanelContainer" type="PanelContainer"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -28.0
-margin_top = -17.0
-margin_right = 28.0
-margin_bottom = 17.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.594604
+margin_right = 0.594604
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 66.657, -169.34 )
-scale = Vector2( 0.988, 0.707 )
-texture = ExtResource( 2 )
-
-[node name="Back" type="Button" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 7.0
 margin_top = 7.0
-margin_right = 135.0
-margin_bottom = 27.0
+margin_right = 1017.0
+margin_bottom = 593.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_right = 1010.0
+margin_bottom = 468.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
+margin_right = 1010.0
+margin_bottom = 468.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+margin_right = 477.0
+margin_bottom = 468.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Credits:
+Design by: Noah MacMinn & Rebecca Rexroth
+Final Project CSC361 Shippensburg University
+
+
+Music:
+-Intro Screen
+	Decay - Kevin MacLeod https://filmmusic.io/song/3628-decay
+
+
+Sound
+-Footsteps
+	https://bigsoundbank.com/detail-0514-footsteps-shoe-on-concrete.html
+	https://freesound.org/people/magnuswaker/sounds/540075/
+"
+autowrap = true
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+margin_left = 481.0
+margin_right = 528.0
+margin_bottom = 468.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.1
+
+[node name="Label2" type="Label" parent="VBoxContainer/MarginContainer/HBoxContainer"]
+margin_left = 532.0
+margin_right = 1010.0
+margin_bottom = 468.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Art:
+-Icon Sprites
+	Oceansdream
+
+-Hazmat Sprite
+	https://www.spriters-resource.com/neo_geo_ngcd/ms4/sheet/11364/?source=genre
+	
+-Monster Sprite
+	https://opengameart.org/content/lpc-zombie
+
+-Tilemap & Med Station
+	Noah MacMinn
+	"
+autowrap = true
+
+[node name="Back" type="Button" parent="VBoxContainer"]
+margin_top = 468.0
+margin_right = 1010.0
+margin_bottom = 586.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.25
 text = "Back"
-[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_Back_pressed"]
