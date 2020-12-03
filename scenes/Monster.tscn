@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/sprites/Monster Walking.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Monster.gd" type="Script" id=2]
@@ -56,8 +56,6 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=11]
-
 [node name="MonsterEntity" type="KinematicBody2D" groups=[
 "monster",
 ]]
@@ -69,11 +67,5 @@ script = ExtResource( 2 )
 light_mask = 0
 frames = SubResource( 10 )
 animation = "MonsterWalk"
-frame = 4
+frame = 5
 playing = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-scale = Vector2( -2.57336, 2.00595 )
-shape = SubResource( 11 )
-
-[node name="Navigation2D" type="Navigation2D" parent="."]
