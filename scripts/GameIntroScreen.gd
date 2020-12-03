@@ -2,11 +2,12 @@ extends PanelContainer
 
 
 func _ready():
-	$Decay.play()
+	MusicController.play_music()
 	pass
 	
 func _on_GameStart_pressed():
 	get_tree().change_scene("res://scenes/GameRunner.tscn")
+	MusicController.stop_music()
 
 func _on_Settings_pressed():
 	get_tree().change_scene("res://scenes/Settings.tscn")
