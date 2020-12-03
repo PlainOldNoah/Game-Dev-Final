@@ -71,6 +71,7 @@ func _process(delta):
 	$Position2D.look_at(get_global_mouse_position())
 
 func _on_Area2D_body_entered(body):
+	print(body)
 	if body.is_in_group("monster") and hittable == true:
 		currentHealth -= clamp(1, 0, Globals.gameplay["maxHealth"])
 		$HUD/PanelContainer/VBoxContainer/HBoxContainer/ProgressBar.value = currentHealth
